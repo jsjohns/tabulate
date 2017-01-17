@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/yeti/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="static/bower_components/handsontable-pro/dist/handsontable.full.css">
+    <link rel="stylesheet" media="screen" href="static/bower_components/dropzone/dist/dropzone.css">
+    <style>{% include 'index.css' %}</style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="static/bower_components/handsontable-pro/dist/handsontable.full.js"></script>
+    <script src="static/bower_components/jquery-csv/src/jquery.csv.min.js"></script>
+    <script src="static/bower_components/dropzone/dist/dropzone.js"></script>
+    <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="static/bower_components/pdfobject/pdfobject.min.js"></script>
+    <script src="static/bower_components/col-resizable/colResizable-1.6.js"></script>
+    <script>{% include 'index.js' %}</script>
+</head>
+<body>
+
+<div class="mid2">
+    <div id="loader" class="loading" style="display: none">Loading&#8230;</div>
+</div>
+
+<div id="help" class="mid">
+    <h3 style="color: #777777">
+        <span style="top: 3px" class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+        <span>Drag document here</span>
+    </h3>
+</div>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">
+        Tabulate Demo
+        <span id="source-name-root" style="display: none">
+            - <span id="source-name"></span>
+        </span>
+      </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a id="export-csv" href="#"><span class="glyphicon glyphicon-export" aria-hidden="true"></span> CSV</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<table class="mytable">
+    <tr class="mytr">
+        <td class="mytd pdftd">
+            <div id="pdf-div"></div>
+        </td>
+        <td class="mytd tabletd" style="font-size: 10px">
+            <div id="handsontable" class="pdf"></div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
